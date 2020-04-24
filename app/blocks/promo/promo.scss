@@ -1,0 +1,135 @@
+.promo {
+	position: relative;
+	z-index: 1;
+	height: 91.4rem;
+	margin-bottom: -8rem;
+
+	@include below($xl) {
+		height: 62rem;
+		margin-bottom: -4rem;
+	}
+
+	@include below($md) {
+		height: 45rem;
+		margin-bottom: -2rem;
+	}
+
+	@include below($sm) {
+		margin-bottom: 5rem;
+	}
+
+	&__figure {
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: auto 100%;
+		z-index: -1;
+
+		@include below($md) {
+			bottom: 13rem;
+		}
+	}
+
+	&__cont {
+		padding: 30.2rem 0 0;
+
+		@include below($xl) {
+			padding-top: 20rem;
+		}
+
+		@include below($md) {
+			padding-top: 12rem;
+		}
+	}
+
+	&__btn {
+		text-align: right;
+		margin-bottom: -0.4rem;
+
+		@include below($xl) {
+			margin-bottom: 1.4rem;
+		}
+
+		@include below($md) {
+			margin-bottom: 4rem;
+		}
+
+		@include below($sm) {
+			margin-bottom: 3.2rem;
+
+			.btn-def {
+				min-width: 0;
+			}
+		}
+	}
+
+	&__title {
+		font-size: 4.1rem;
+		line-height: 5.4rem;
+		color: $base-color;
+		margin: 0 0 13.8rem 45.2%;
+
+		@include below($xl) {
+			font-size: 3.2rem;
+			line-height: 4rem;
+			margin: 0 0 5.6rem 46%;
+		}
+
+		@include below($lg) {
+			font-size: 2.6rem;
+			line-height: 3.8rem;
+			margin: 0 0 6.3rem 46%;
+		}
+
+		@include below($md) {
+			font-size: 2rem;
+			line-height: 2.8rem;
+			color: #fff;
+			margin: 0 0 1.5rem 46%;
+		}
+
+		@include below($sm) {
+			font-size: 1.8rem;
+			line-height: 2.4rem;
+			min-height: 7.2rem;
+			color: #fff;
+			margin: 0 0 0.8rem 40%;
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	&__text {
+		font-size: 2.5rem;
+		line-height: 3.3rem;
+		color: #fff;
+		margin: 0 0 0 39.2%;
+		max-width: 58rem;
+
+		@include below($xl) {
+			margin: 0 0 0 40%;
+			font-size: 1.8rem;
+			line-height: 2.6rem;
+		}
+
+		@include below($md) {
+			margin: 0 -#{$page-intend--md};
+			padding: 2rem;
+			font-size: 1.6rem;
+			line-height: 2.4rem;
+			max-width: none;
+			background-color: $base-color;
+			display: flex;
+			align-items: center;
+			min-height: 11.2rem;
+		}
+
+		@include below($sm) {
+			min-height: 18.4rem;
+		}
+	}
+}

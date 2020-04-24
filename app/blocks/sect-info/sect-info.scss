@@ -1,0 +1,13 @@
+.sect-info {
+	position: relative;
+	z-index: 2;
+	margin-bottom: 6rem;
+
+	@include below($sm) {
+		margin-bottom: 4rem;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}

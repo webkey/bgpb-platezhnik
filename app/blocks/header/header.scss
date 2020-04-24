@@ -1,0 +1,224 @@
+.header {
+	position: relative;
+	z-index: 5;
+	margin-bottom: -8.6rem;
+
+	@include below($xl) {
+		margin-bottom: -5rem;
+	}
+
+	@include below($lg) {
+		margin-bottom: -6.3rem;
+	}
+
+	@include below($md) {
+		margin-bottom: -2.3rem;
+	}
+
+	@include below($sm) {
+		margin-bottom: 0;
+	}
+
+	&__container {
+		position: relative;
+		display: flex;
+		align-items: center;
+		margin: 0 auto;
+		height: 11.2rem;
+
+		@include below($md) {
+			height: 8rem;
+		}
+
+		@include below($sm) {
+			display: block;
+			height: auto;
+			padding-bottom: 2rem;
+		}
+	}
+
+	&__logo {
+		$width: 32.5rem;
+
+		flex: 1 0 $width;
+		max-width: $width;
+		position: relative;
+		height: 100%;
+		padding: 0 3rem 0 8.8rem;
+		display: flex;
+		align-items: center;
+
+		@include below($lg) {
+			$width: 24rem;
+
+			flex: 1 0 $width;
+			max-width: $width;
+			padding: 0 2rem;
+		}
+
+		@include below($md) {
+			$width: 18rem;
+
+			flex: 1 0 $width;
+			max-width: $width;
+			padding: 0;
+		}
+
+		@include below($sm) {
+			padding: 1.5rem 0;
+			max-width: none;
+			text-align: center;
+			margin: 0 -#{$page-intend--md} 2rem;
+			background-color: #75787b;
+		}
+
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 100rem;
+			height: 100%;
+			background-color: #75787b;
+			transform: skewX(-16.4deg);
+			z-index: -1;
+
+			@include below($sm) {
+				display: none;
+			}
+		}
+
+		.logo {
+			flex-shrink: 0;
+			position: relative;
+			overflow: hidden;
+			width: 18.7rem;
+			max-width: 100%;
+			background: url(../images/logo.svg) no-repeat;
+			background-size: contain;
+			text-indent: -9999px;
+			z-index: 5;
+
+			@include below($lg) {
+				width: 18rem;
+			}
+
+			@include below($md) {
+				width: 14rem;
+			}
+
+			@include below($sm) {
+				margin: 0 auto;
+			}
+
+			&::before {
+				content: "";
+				display: block;
+				pointer-events: none;
+
+				@include ratio(247, 70);
+			}
+
+			&__inner {
+				position: absolute;
+				left: 0;
+				top: 0;
+				display: block;
+				height: 100%;
+				width: 100%;
+			}
+		}
+	}
+
+	&__slogan {
+		$width: 35rem;
+
+		flex: 1 0 $width;
+		max-width: $width;
+		position: relative;
+		margin: 1.1rem 2rem 0 3.1rem;
+		font-size: 1.8rem;
+		line-height: 1.8rem;
+		color: #75787b;
+
+		@include below($lg) {
+			$width: 25rem;
+
+			flex: 1 0 $width;
+			max-width: $width;
+		}
+
+		@include below($md) {
+			$width: 20rem;
+
+			flex: 1 0 $width;
+			max-width: $width;
+			font-size: 1.6rem;
+			line-height: 1.6rem;
+		}
+
+		@include below($sm) {
+			max-width: none;
+			display: block;
+			margin: 0 0 2rem;
+			text-align: center;
+		}
+	}
+
+	.app {
+		position: absolute;
+		right: 4.4rem;
+		top: 6.5rem;
+		width: 12.8rem;
+
+		@include below($xl) {
+			right: 0;
+			top: 2rem;
+		}
+
+		@include below($md) {
+			right: 0;
+			top: 1rem;
+		}
+
+		@include below($sm) {
+			position: relative;
+			right: auto;
+			top: auto;
+			margin: 0 auto;
+			width: auto;
+			max-width: 25.6rem;
+			display: flex;
+			align-items: center;
+		}
+
+		a {
+			display: block;
+			text-decoration: none;
+			color: inherit;
+			margin-bottom: 0.9rem;
+			transition: all $animation-speed;
+
+			@include below($sm) {
+				$width: calc(50% - 1rem);
+
+				flex: 1 0 $width;
+				max-width: $width;
+				margin: 0 1rem;
+
+				&:first-child {
+					margin-left: 0;
+				}
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+
+			&:hover {
+				opacity: 0.8;
+			}
+		}
+	}
+}

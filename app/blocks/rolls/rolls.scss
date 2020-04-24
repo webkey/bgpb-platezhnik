@@ -1,0 +1,158 @@
+.rolls {
+	display: block;
+
+	&__item {
+		border-bottom: 1px solid #d4d4d4;
+
+		&:last-child {
+			border: none;
+		}
+	}
+
+	&__head {
+		position: relative;
+		display: block;
+		padding: 0.7rem 4.6rem 0.7rem 1.5rem;
+		cursor: pointer;
+		color: $base-color;
+		text-decoration: none;
+		transition: color $animation-speed;
+		user-select: none;
+
+		&_narrow {
+			max-width: $layout-content-width;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		@include below($sm) {
+			padding: 1.2rem 3rem 1.2rem 0;
+		}
+
+		&:hover {
+			color: $highlight-color;
+		}
+	}
+
+	&__title {
+		font-size: 2.5rem;
+		color: currentColor;
+
+		@include below($md) {
+			font-size: 1.8rem;
+		}
+	}
+
+	&__arrow {
+		$size: 4rem;
+
+		height: $size;
+		width: $size;
+		position: absolute;
+		top: 50%;
+		right: 0;
+		margin: -#{$size / 2} 0 0;
+		font-size: 0;
+		line-height: 0;
+
+		@include below($sm) {
+			right: -1.3rem;
+		}
+
+		&::before,
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			width: 1.3rem;
+			height: 0.3rem;
+			background-color: currentColor;
+			transition: transform $animation-speed;
+			margin: -0.1rem 0 0 -0.8rem;
+		}
+
+		&::after {
+			transform: rotate(90deg);
+		}
+
+		&.active {
+			&::after {
+				transform: rotate(0deg);
+			}
+		}
+	}
+
+	&__panel {
+		position: relative;
+		display: none;
+
+		&-content {
+			padding: 1rem 1.5rem 2rem;
+
+			@include below($sm) {
+				padding: 0 0 2rem;
+			}
+
+			&_space-top {
+				padding-top: 2rem;
+			}
+		}
+	}
+}
+
+.rolls-content {
+	&-order-list {
+		margin: 0 0 3rem;
+		padding: 0;
+		list-style: none;
+		counter-reset: item;
+
+		li {
+			counter-increment: item;
+			position: relative;
+			padding: 0 0 0 5.4rem;
+			margin: 0 0 1.2rem;
+
+			@include below($sm) {
+				padding-left: 3.5rem;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			&::before {
+				$size: 2.6rem;
+
+				content: counter(item);
+				display: block;
+				position: absolute;
+				left: 1.2rem;
+				top: 0;
+				margin: -0.1rem 0;
+				height: $size;
+				width: $size;
+				line-height: $size;
+				color: #fff;
+				text-align: center;
+				border-radius: $size;
+				background-color: $bullet-color;
+
+				@include below($sm) {
+					$size: 2.4rem;
+
+					height: $size;
+					width: $size;
+					line-height: $size;
+					left: 0;
+				}
+			}
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

@@ -1,0 +1,146 @@
+@import 'helpers/variables';
+@import 'helpers/mixins';
+@import 'helpers/fonts';
+@import 'helpers/optimize';
+
+html,
+body {
+	height: 100%;
+}
+
+html {
+	font-size: 62.5%;
+	overflow-x: hidden;
+}
+
+body {
+	min-width: 320px;
+	font-family: 'Roboto', Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	font-size: 1.8rem;
+	line-height: 1.43;
+	color: #000;
+}
+
+a {
+	text-decoration: underline;
+	color: $base-color;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.layout-page,
+.layout-content,
+.layout-text {
+	padding: {
+		left: $page-intend;
+		right: $page-intend;
+	};
+
+	@include below($md) {
+		padding: {
+			left: $page-intend--md;
+			right: $page-intend--md;
+		};
+	}
+
+	margin: {
+		left: auto;
+		right: auto;
+	};
+}
+
+.layout-page {
+	max-width: $layout-page-width;
+}
+
+.layout-content {
+	max-width: $layout-content-width;
+
+	&_instruction {
+		max-width: 102.6rem;
+	}
+
+	&_package {
+		max-width: 89.6rem + 5.6rem;
+	}
+}
+
+.layout-text {
+	max-width: $layout-text;
+}
+
+img {
+	border: none;
+	vertical-align: top;
+	max-width: 100%;
+
+	table & {
+		max-width: none;
+	}
+}
+
+.ol-custom {
+	margin: 0 0 3rem;
+	padding: 0;
+	list-style: none;
+	counter-reset: item;
+	font-size: 2.5rem;
+	color: $base-color;
+
+	@include below($sm) {
+		font-size: 1.8rem;
+	}
+
+	li {
+		counter-increment: item;
+		position: relative;
+		padding: 0 0 0 6.9rem;
+		margin: 0 0 1.4rem;
+
+		@include below($sm) {
+			padding-left: 3.5rem;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&::before {
+			$size: 3.8rem;
+
+			content: counter(item);
+			display: block;
+			position: absolute;
+			left: 1.2rem;
+			top: 0;
+			margin: -0.1rem 0;
+			height: $size;
+			width: $size;
+			line-height: $size;
+			font-size: 2.5rem;
+			color: #fff;
+			text-align: center;
+			border-radius: $size;
+			background: linear-gradient(45deg, #2af598 0%, #0bb2e6 100%);
+
+			@include below($sm) {
+				$size: 2.4rem;
+
+				height: $size;
+				width: $size;
+				line-height: $size;
+				font-size: 2rem;
+				left: 0;
+			}
+		}
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+@import '../blocks/**/*';

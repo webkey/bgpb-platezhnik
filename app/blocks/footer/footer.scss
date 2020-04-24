@@ -1,0 +1,64 @@
+.footer {
+	$space-x: 2rem;
+
+	display: block;
+	background-color: #00559d;
+	padding: {
+		top: 2rem;
+		bottom: 2rem;
+	};
+
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0 -#{$space-x / 2} 2rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&-col {
+			padding: 0 #{$space-x / 2};
+			text-align: center;
+		}
+	}
+}
+
+.logo-foot {
+	display: block;
+	position: relative;
+	overflow: hidden;
+	width: 14.8rem;
+	max-width: 100%;
+	margin: 0 auto 1rem;
+	background: url(../images/logo-foot.svg) no-repeat;
+	background-size: contain;
+	text-indent: -9999px;
+	z-index: 5;
+	opacity: 0.7;
+
+	&::before {
+		content: "";
+		display: block;
+		pointer-events: none;
+
+		@include ratio(247, 70);
+	}
+
+	&__inner {
+		position: absolute;
+		display: block;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100%;
+	}
+}
+
+.copyright {
+	display: block;
+	font-size: 1.4rem;
+	color: #fff;
+	opacity: 0.7;
+}

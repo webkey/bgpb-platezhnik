@@ -1,0 +1,16 @@
+.sect-package {
+	* {
+		font-family: 'Roboto', Helvetica, Arial, sans-serif;
+	}
+
+	.package-item__head {
+		font-family: 'Roboto', Helvetica, Arial, sans-serif;
+		font-weight: bold;
+		background-color: #3dd2ea;
+
+		&_transparent {
+			color: #3dd2ea;
+			background-color: transparent;
+		}
+	}
+}
